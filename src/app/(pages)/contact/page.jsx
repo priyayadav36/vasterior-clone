@@ -1,6 +1,11 @@
 "use client";
 import { useState } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
+import dynamic from "next/dynamic";
+
+const ReCAPTCHA = dynamic(
+  () => import("react-google-recaptcha"),
+  { ssr: false }
+);
 import { FaPhoneAlt } from "react-icons/fa";
 import { HiLocationMarker } from "react-icons/hi";
 import { MdEmail } from "react-icons/md";
